@@ -1,0 +1,9 @@
+title Weather
+body
+  h2 Weather for #{zip}
+  p Current temp:
+    | #{data.main.temp} °F
+  p Description:
+    | #{data.weather[0].description}
+  p Humidity:
+    | #{data.main.humidity}%
