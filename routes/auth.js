@@ -4,7 +4,7 @@ const User = require("../Models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "your_super_secret_key";
-// Register
+// Register Page
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const existing = await User.findOne({ username });
@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
   await user.save();
   res.status(201).json({ message: "User registered" });
 });
-// Login
+// Login Page
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username });
